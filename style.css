@@ -1,0 +1,289 @@
+html{
+    scroll-behavior: smooth;
+}
+p{font-family: 'Times New Roman', Times, serif;
+font-size: 175%;
+color: maroon;
+display: grid;
+justify-content: center;
+align-items: center;
+background-color: rgb(243, 243, 202);}
+.hero{
+    text-align: center;
+margin:0%;}
+.hero p {margin: 0;}
+.btn{
+    justify-self: center;
+    background-color: rgb(216, 19, 124);
+    color: white;
+    text-decoration: none;
+    padding: 4px 6px;
+    font-size: 95%;
+    transition: background 0.3s, transform 0.2s;
+}
+.btn:hover{background: lightpink;
+    color: #0a0a0a;
+transform: scale(1.25);}
+.skip-link{
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #000;
+  color: #ffffff;
+  text-decoration: none;
+  z-index: 100;
+  transition: top 0.4s ease;
+}
+.skip-link:focus{
+  top: 90px;
+}
+header{
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f1c0d9;
+    color: #0a0a0a;
+    font-size: 85%;
+    margin-bottom: 0%;
+}
+header h1{margin: 0%;
+}
+.carousel{
+    position: relative;
+  width: 100%;
+  max-width: 600px;   /* adjust as needed */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Slides wrapper */
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+.slides img {
+  width: 100%;
+  flex-shrink: 0; /* Prevent images from shrinking */
+  border-radius: 10px;
+  object-fit: contain; /* Crop images nicely */
+}
+
+/* Navigation buttons */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}
+
+.carousel button:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+.carousel button.prev {
+  left: 10px;
+}
+
+.carousel button.next {
+  right: 10px;
+}
+
+.navbar{
+    background: #f1c0d9;
+    padding: 10px 20px;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 5%;
+}
+.nav-links a {
+    text-decoration: solid;
+    color: rgb(8, 8, 8);
+    font-size: 18px;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 1001; /* keeps on top */
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: rgb(8, 8, 8);
+  border-radius: 3px;
+  transition: 0.4s;
+}
+.map{
+    display: block;       /* treat as block element */
+    margin: 20px auto;    /* center horizontally */
+    width: 600px;         /* default width */
+    height: 450px;        /* default height */
+    border: 2px solid #ccc; /* optional border */
+    border-radius: 10px;  /* optional rounded corners */ }
+@media screen and (min-width: 0px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #fffafa;
+    text-align: center;
+    padding: 0;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+  .btn{width: 80%;
+font-size: 70%;
+padding: 15px;
+border: solid black;}
+ .carousel {
+    max-width: 100%;
+  }
+
+  .slides img {
+    height: 200px; /* smaller height for mobile */
+  }
+
+  .carousel button {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .map{
+    
+    width: 70%;    /* almost full width */
+    height: 250px; /* smaller height */
+    margin: 15px auto;
+  }
+}
+/* Hide checkbox */
+#menu-toggle {
+  display: none;
+}
+#menu-toggle:checked ~ .nav-links {
+  display: flex;
+}
+/* Hamburger "X" animation */
+#menu-toggle:checked + .hamburger span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+#menu-toggle:checked + .hamburger span:nth-child(2) {
+  opacity: 0;
+}
+#menu-toggle:checked + .hamburger span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+@media screen and (min-width: 998px) {
+  .hamburger {
+    display: none !important;
+  }
+
+  .nav-links {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+  .btn{width: 65%;
+font-size: 75%;
+padding: 12px;
+border: solid black;}
+ .slides img {
+    height: 400px; /* bigger images for desktop */
+  }
+  .carousel button {
+    font-size: 20px;
+    padding: 12px 18px;
+  }
+  .map{
+    width: 42%;
+    height: 190px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    scroll-behavior: auto !important;  /* 7a: remove scroll behavior */
+  }
+}
+
+/* ===== 8) Dark color scheme ===== */
+@media (prefers-color-scheme: dark) {
+  .grid img {
+    background: #111;     /* 8a: dark background */
+    color: #ffe680;       /* 8b: yellow-ish text */
+    border-color: #000;   /* 8c: black border */
+  }
+
+  body {
+    background: #000;
+    color: #eee;
+  }
+}
+  
+
+footer a {
+  color: #141010;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* Apply to the whole page */
+body {
+  margin: 0;
+  min-height: 100vh;          /* full screen height */
+  display: flex;
+  flex-direction: column;     /* stack content vertically */
+}
+
+/* Main content grows to fill space */
+main {
+  flex: 1;
+}
+
+/* Footer styles */
+footer {
+  background: #f0bcd6;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+.flora{
+    background-color: #ffffff;
+    color: #e6328f;
+    font-weight: bold;
+    font-size: 170%;
+}
+.color{
+    text-align: center;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    font-size: 113%;
+}

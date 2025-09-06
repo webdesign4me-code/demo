@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to Main Content</a>
+    <header>
+        <h1>
+            Floral Maison
+        <i class="fa-solid fa-spa fa-2x"></i>
+        </h1>
+        <nav class="navbar">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        <ul class="nav-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="shop.html">SHOP</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+    <div class="hero">
+        <p>
+            Fresh Flowers For Every Occasion
+        <a href="shop.html" class="btn">SHOP NOW</a> 
+        </p>
+        <p>“Fresh flowers delivered with love. From roses to lilies, we bring nature’s beauty to your special moments.”</p>
+        <div class="carousel">
+            <button class="prev" onclick="moveslide(-1)"></button>
+            <div class="slides">
+                <img src="images/aqua.jpg" alt="Flowerone">
+                <img src="images/boque.jpeg" alt="Flowertwo">
+                <img src="images/lily.png" alt="Flowerthee">
+                <img src="images/roses.png" alt="Flowerfor">
+                <img src="images/birdy.webp" alt="Flowerfv">
+                <img src="images/purpletulip.webp" alt="Flowersix">
+                <img src="images/sunbrdy.jpg" alt="flowersvn">
+            </div>
+            <button class="next" onclick="moveslide(1)"></button>
+        </div>
+    </div>
+    </main>
+    <script src="script.js"></script>
+    <footer id="contact">
+     <p>© 2025 Floral Maison. All rights reserved.</p>
+  <p>Email: info@floralmaison.com | Phone: ‪+92-300-1234567‬</p>
+  <p>
+    <a href="index.html">Home</a> | 
+    <a href="shop.html">Shop</a> | 
+    <a href="about.html">About</a>
+  </p>
+    <a href="#top">Jump to the Top</a>
+    </footer>
+</body>
+</html>
