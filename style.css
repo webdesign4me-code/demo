@@ -225,20 +225,27 @@ border: solid black;}
     height: 190px;
   }
 }
-@media (prefers-reduced-motion: reduce) {
+@media screen and (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto !important;  /* 7a: remove scroll behavior */
   }
 }
 
 /* ===== 8) Dark color scheme ===== */
-@media (prefers-color-scheme: dark) {
+@media screen and (prefers-color-scheme: dark) {
   .grid img {
     background: #111;     /* 8a: dark background */
     color: #ffe680;       /* 8b: yellow-ish text */
     border-color: #000;   /* 8c: black border */
   }
-
+  .carousel button.prev{
+    background-color: #f8f5f5;
+    color: #000;
+  }
+  .carousel button.next{
+    background-color: #f8f5f5;
+    color: #000;
+  }
   body {
     background: #000;
     color: #eee;
