@@ -13,9 +13,10 @@
     <header>
         <h1>Floral Maison
         <i class="fa-solid fa-spa fa-2x"></i></h1>
+          <input type="text" id="search" placeholder="Search flowers...">
         <nav class="navbar">
             <input type="checkbox" id="menu-toggle">
-            <label for="menu-toggle" class="hamburger">
+            <label for="menu-toggle" class="hamburger" aria-label="toggle navigation menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,118 +32,129 @@
     <main id="main-content" tabindex="-1">
         <p>WELCOME TO FLORAL MAISON</p>
         <p>DISCOVER ELEGANCE IN EVERY PETAL</p>
-        <div class="grid">
-            <div>
+        <button id="cart-btn">🛒</button>
+
+  <!-- Popup Cart -->
+        <div class="cart-overlay" id="cart-overlay">
+          <div class="cart-box">
+            <span class="close-btn" id="close-cart">&times;</span>
+            <h3>🛒 Your Cart</h3>
+            <ul id="cart-items"></ul>
+            <p><strong>Total: Rs.<span id="cart-total">0</span></strong></p>
+          </div>
+        </div>
+        <div class="grid products">
+            <div class="product">
                 <a href="images/redtulip.jpg" class="lightbox-link">
                 <img src="images/redtulip.jpg" alt="flower">
                 </a>
                 <p class="label">BLUSHING TULIPS</p>
                 <p class="label">RS.600.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Blushing Tulips" data-price="600.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/sunflower.jpg" class="lightbox-link">
                 <img src="images/sunflower.jpg" alt="flower1">
                 </a>
                 <p class="label">MORNING GLORY</p>
                 <p class="label">RS.600.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Morning Glory" data-price="600.00" >ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/whiterose.jpg" class="lightbox-link">
                 <img src="images/whiterose.jpg" alt="flower2"> 
                 </a>
                 <p class="label">WHITE ROSES</p>  
                 <p class="label">RS.1200.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="White roses" data-price="1200.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/roses.png" class="lightbox-link">
                 <img src="images/roses.png" alt="flower3">
                 </a>
                 <p class="label">REGAL ROSES</p>
                 <p class="label">RS.1200.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Regal Roses" data-price="1200.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/OIP.webp" class="lightbox-link">
                 <img src="images/OIP.webp" alt="flower4">
                 </a>
                 <p class="label">PURE GRACE</p>
                 <p class="label">RS.1200.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Pure Grace" data-price="1200.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/pinkroses.jpg" class="lightbox-link">
                 <img src="images/pinkroses.jpg" alt="flower5">
                 </a>
                 <p class="label">FANTASY PINK</p>
                 <P class="label">RS.1599.00</P>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Fantasy Pink" data-price="1599.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/aqua.jpg" class="lightbox-link">
                 <img src="images/aqua.jpg" alt="flower6">
                 </a>
                 <p class="label">SKY BOUQUET</p>
                 <P class="label">RS.1399.00</P>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Sky Bouquet" data-price="1399.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/boque.jpeg" class="lightbox-link">
                 <img src="images/boque.jpeg" alt="flower7">
                 </a>
                 <p class="label">SPRING FRESH</p>
                 <p class="label">RS.1200.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Spring Fresh" data-price="1200.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/flowers.webp" class="lightbox-link">
                     <img src="images/flowers.webp" alt="flower8">
                 </a>
                 <p class="label">REAL GRACE</p>
                 <p class="label">RS.1399.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Real Grace" data-price="1399.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/OIP3.webp" class="lightbox-link">
                 <img src="images/OIP3.webp" alt="flower9">
                 </a>
                 <p class="label">SCARLET CHARM</p>
                 <p class="label">RS.1399.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Scarlet Charm" data-price="1399.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/brdyflo.webp" class="lightbox-link">
                 <img src="images/brdyflo.webp" alt="flower12">
                 </a>
                 <p class="label">BIRTHDAY BOUQUET</p>
                 <p class="label">RS.999.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Birthday Bouquet" data-price="999.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/redrose.webp" class="lightbox-link">
                     <img src="images/redrose.webp" alt="flowerr">
                 </a>
                 <p class="label">ROSES</p>
                 <p class="label">RE.1499.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Roses" data-price="1499.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/birdy.webp" class="lightbox-link">
                 <img src="images/birdy.webp" alt="flower10">
                 </a>
                 <p class="label">SUNSET BLISS</p>
                 <p class="label">RS.999.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Sunset Bliss" data-price="999.00">ADD TO CART</button>
             </div>
-            <div>
+            <div class="product">
                 <a href="images/birthdy.webp" class="lightbox-link">
                 <img src="images/birthdy.webp" alt="flower11">
                 </a>
                 <p class="label">SUNSET CHARM</p>
                 <p class="label">RS.999.00</p>
-                <button>ADD TO CART</button>
+                <button class="add-to-cart" data-product="Sunset Charm" data-price="999.00">ADD TO CART</button>
             </div>
         </div>
         <div id="lightbox">

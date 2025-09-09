@@ -170,3 +170,17 @@ button:hover{
     background: #eecaca;
     color: rgb(0, 0, 0);
 }
+
+#search {
+  
+  padding: 15px;
+  width: 270px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  text-align: center;
+}
+#search:focus {
+  border-color: #ff69b4; /* pink border on focus */
+}
+

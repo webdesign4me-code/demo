@@ -47,7 +47,7 @@ const lightbox = document.getElementById("lightbox");
   });
 
   // Prev
-  prevBtn.addEventListener("click", e => {
+   prevBtn.addEventListener("click", e => {
     e.stopPropagation();
     currentIndex = (currentIndex - 1 + links.length) % links.length;
     showImage();
@@ -74,3 +74,83 @@ const lightbox = document.getElementById("lightbox");
       if (e.key === "Escape") lightbox.style.display = "none";
     }
   });
+
+   let cart = 
+   JSON.parse(localStorage.getItem("cart") || "[]");
+
+function renderCart() {
+  let cartList = document.getElementById("cart-items");
+  let total = 0;
+  cartList.innerHTML = "";
+  cart.forEach((item, index) => {
+    let newItem = document.createElement("li");
+    newItem.textContent = `${item.product} - Rs.${item.price.toFixed(2)}`;
+    let removeButton = document.createElement("button");
+    removeButton.textContent = "Remove";
+    removeButton.onclick = () => removeFromCart(index);
+    newItem.appendChild(removeButton);
+    cartList.appendChild(newItem);
+    total += item.price;
+  });
+  document.getElementById("cart-total").textContent = `Total: Rs.${total.toFixed(2)}`;
+}
+function addToCart(product, price) {
+  if (product && price) {
+    cart.push({ product, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    renderCart();
+  } else {
+    console.error("Invalid product or price");
+  }
+}
+
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  localStorage.setItem("cart", JSON.stringify(cart));
+  renderCart();
+}
+
+   const cartBtn = document.getElementById("cart-btn");
+    const cartOverlay = document.getElementById("cart-overlay");
+    const closeCart = document.getElementById("close-cart");
+
+    cartBtn.addEventListener("click", () => {
+      cartOverlay.style.display = "flex"; // show popup
+    });
+
+    closeCart.addEventListener("click", () => {
+      cartOverlay.style.display = "none"; // close popup
+    });
+
+    renderCart();
+
+    document.querySelectorAll(".add-to-cart").forEach(button => {
+    button.addEventListener("click", () => {
+    console.log("Button clicked:", button.getAttribute("data-product"));
+    const product = button.getAttribute("data-product");
+    const price = Number(button.getAttribute("data-price"));
+    addToCart(product, price);
+
+    // Change button text for feedback
+    const oldText = button.textContent;
+    button.textContent = "✅ Added!";
+    button.disabled = true; // optional (prevents double-click)
+
+    // Reset back after 1.5s
+    setTimeout(() => {
+      button.textContent = oldText;
+      button.disabled = false;
+    }, 600);
+   });
+   });
+
+
+const searchInput = document.getElementById("search");
+
+searchInput.addEventListener("input", () => {
+  const value = searchInput.value.toLowerCase();
+  document.querySelectorAll(".product").forEach(p => {
+    const text = p.textContent.toLowerCase();
+    p.style.display = text.includes(value) ? "block" : "none";
+  });
+});
